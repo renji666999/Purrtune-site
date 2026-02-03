@@ -54,18 +54,68 @@ nav {
 
 /* BUTTONS */
 .btn-pulse {
-    background: var(--primary); color: #0B1120;
-    padding: 18px 40px; border-radius: 12px; font-weight: 800; font-size: 1.1rem;
-    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.7);
-    animation: pulse-cyan 2s infinite;
-    display: inline-flex; align-items: center; gap: 10px;
+    background: linear-gradient(135deg, #22D3EE 0%, #06B6D4 100%); /* Gradasi Cyan */
+    color: #0F172A;
+    padding: 18px 42px; 
+    border-radius: 14px; 
+    font-weight: 800; 
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    /* Glow Effect */
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.4), inset 0 1px 0 rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    display: inline-flex; align-items: center; gap: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
-.btn-pulse:hover { transform: scale(1.05); }
 
-@keyframes pulse-cyan {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(34, 211, 238, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+/* Efek Hover: Tombol "Naik" dan Glow makin terang */
+.btn-pulse:hover { 
+    transform: translateY(-4px); 
+    box-shadow: 0 10px 30px rgba(34, 211, 238, 0.6), inset 0 1px 0 rgba(255,255,255,0.4);
+}
+
+/* Efek Klik: Tombol "Turun" dikit */
+.btn-pulse:active { transform: translateY(-1px); }
+
+/* Kilatan cahaya halus lewat (Shine Effect) */
+.btn-pulse::after {
+    content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
+    transform: skewX(-20deg);
+    animation: shine-pass 4s infinite;
+}
+
+@keyframes shine-pass {
+    0% { left: -100%; }
+    20% { left: 200%; } /* Lewat cepet */
+    100% { left: 200%; } /* Jeda lama */
+}
+
+/* Tombol Putih Solid untuk CTA Bawah */
+.btn-solid-white {
+    background: #F8FAFC;
+    color: #0F172A;
+    padding: 16px 36px;
+    border-radius: 12px;
+    font-weight: 800;
+    display: inline-flex; align-items: center; gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 2px solid transparent;
+}
+
+.btn-solid-white:hover {
+    background: #fff;
+    transform: scale(1.03);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: var(--primary); /* Sentuhan Cyan pas di-hover */
+}
+
+.btn-solid-white:hover svg {
+    color: var(--primary);
+    transition: 0.3s;
 }
 
 /* MOCKUP */
