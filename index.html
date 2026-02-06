@@ -3,136 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PurrTune by Query Cat | Precision Audio Engineering</title>
-    <meta name="description" content="Native C++ Guitar Tuner with zero latency. Privacy-first, ad-free, and engineered for perfection.">
-    
+    <title>PurrTune | Precision Audio Engineering</title>
+    <meta name="description" content="Professional Guitar Tuner built with Native C++ DSP. Zero latency, privacy-first, and engineered for absolute acoustic perfection.">
+    <meta name="theme-color" content="#030305">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="ambient-glow glow-1"></div>
-    <div class="ambient-glow glow-2"></div>
+    <div class="noise-overlay"></div>
+    <div class="aurora-bg">
+        <div class="aurora-blob b1"></div>
+        <div class="aurora-blob b2"></div>
+        <div class="aurora-blob b3"></div>
+    </div>
 
     <nav class="glass-nav">
         <div class="container nav-content">
             <div class="brand">
-                <span class="brand-logo">QC</span>
-                <span class="brand-text">Query Cat</span>
+                <div class="logo-mark">QC</div>
+                <div class="brand-info">
+                    <span class="brand-name">Query Cat</span>
+                    <span class="brand-tag">Audio Lab</span>
+                </div>
             </div>
             <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#privacy">Privacy</a>
-                <a href="app-release.apk" class="btn-download-small">Download v1.0</a>
+                <a href="#engine">The Engine</a>
+                <a href="#manifesto">Privacy Manifesto</a>
+                <a href="#faq">FAQ</a>
+                <a href="app-release.apk" class="btn-download-nav">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span>Get v1.0</span>
+                </a>
             </div>
         </div>
     </nav>
 
     <header class="hero container">
         <div class="hero-content reveal-text">
-            <div class="pill-badge">
-                <span class="dot"></span> NATIVE C++ ENGINE
+            
+            <div class="status-badge">
+                <span class="status-dot pulsing"></span>
+                <span class="status-text">SYSTEM ONLINE: NATIVE C++ DSP</span>
             </div>
-            <h1>Don't Just Tune.<br><span class="gradient-text">Calibrate.</span></h1>
+            
+            <h1 class="glitch-header">Sonic <br><span class="gradient-text">Perfection.</span></h1>
+            
             <p class="hero-sub">
-                Lupakan tuner yang lambat. PurrTune dibangun dengan arsitektur <strong>Native C++ DSP</strong> untuk respons nol-latensi. Presisi matematika untuk telinga musisi profesional.
+                Tuner standar berbasis Java sering mengalami <em>micro-stutter</em>. 
+                PurrTune dibangun ulang dengan arsitektur <strong>C++ Native YIN Algorithm</strong>. 
+                Respons instan. Akurasi mikroskopis. Nol kompromi.
             </p>
             
             <div class="cta-group">
-                <a href="app-release.apk" class="btn-primary">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                    <span>Download Early Access</span>
+                <a href="app-release.apk" class="btn-primary glow-effect">
+                    <span>Install Early Access</span>
+                    <div class="shimmer"></div>
                 </a>
-                <div class="os-info">
-                    <span>v1.0.0 Release</span>
-                    <span class="separator">•</span>
+                <div class="tech-specs">
+                    <span><i class="mono">.apk</i> size: 12MB</span>
+                    <span class="divider">/</span>
                     <span>Android 8.0+</span>
+                    <span class="divider">/</span>
+                    <span class="green-text">Ad-Free</span>
                 </div>
             </div>
         </div>
 
-        <div class="hero-visual reveal-visual">
-    <div class="phone-frame">
-        <div class="slider-container">
-            <img src="screen1.webp" alt="PurrTune Tuner Interface" class="app-slide active">
-            <img src="screen2.webp" alt="PurrTune Metronome Interface" class="app-slide">
-            <img src="screen3.webp" alt="PurrTune Settings Interface" class="app-slide">
+        <div class="hero-visual reveal-visual" id="tilt-container">
+            <div class="tilt-card">
+                <div class="phone-frame">
+                    <div class="slider-container">
+                        <img src="screen1.jpg" alt="Tuner Interface" class="app-slide active">
+                        <img src="screen2.jpg" alt="Metronome Interface" class="app-slide">
+                        <img src="screen3.jpg" alt="Settings Interface" class="app-slide">
+                    </div>
+                    <div class="reflection"></div>
+                </div>
+                
+                <div class="float-badge f-1">
+                    <span class="mono-xs">LATENCY: &lt;10ms</span>
+                </div>
+                <div class="float-badge f-2">
+                    <span class="mono-xs">PITCH: 440.0Hz</span>
+                </div>
+            </div>
+            <div class="visual-glow"></div>
         </div>
-        
-        <div class="reflection"></div>
-    </div>
-    <div class="visual-backdrop"></div>
-</div>
     </header>
 
     <section class="trust-strip">
         <div class="container trust-grid">
             <div class="trust-item reveal">
-                <div class="icon">⚡</div>
-                <h3>Zero Latency</h3>
-                <p>Direct AudioStream via JNI.</p>
+                <span class="metric">0<small>ms</small></span>
+                <span class="label">Network Usage</span>
             </div>
             <div class="trust-item reveal" style="transition-delay: 100ms;">
-                <div class="icon">🔒</div>
-                <h3>100% Private</h3>
-                <p>On-Device processing only.</p>
+                <span class="metric">100<small>%</small></span>
+                <span class="label">On-Device Processing</span>
             </div>
             <div class="trust-item reveal" style="transition-delay: 200ms;">
-                <div class="icon">🚫</div>
-                <h3>No Distractions</h3>
-                <p>No Ads. No Trackers.</p>
+                <span class="metric">60<small>fps</small></span>
+                <span class="label">Physics UI Render</span>
             </div>
         </div>
     </section>
 
-    <section id="features" class="container section-padding">
+    <section id="engine" class="container section-padding">
         <div class="section-header reveal">
-            <h2>Engineered for <span class="white-text">Perfection</span></h2>
-            <p>Kami tidak menggunakan library standar. Kami menulis ulang engine audio dari nol.</p>
+            <h2>Under The <span class="white-text">Hood</span></h2>
+            <p>Dibedah per komponen. Dirakit untuk performa.</p>
         </div>
 
-        <div class="feature-grid">
-            <div class="feature-card glass-panel reveal">
-                <div class="card-header">
-                    <span class="tech-tag">ALGORITHM</span>
-                    <h3>YIN + Kalman Filter</h3>
+        <div class="bento-grid">
+            <div class="bento-item item-large glass-panel reveal">
+                <div class="bento-content">
+                    <div class="icon-box cyan"></div>
+                    <h3>YIN Algorithm + NEON SIMD</h3>
+                    <p>
+                        Kebanyakan tuner menggunakan FFT standar yang lambat di nada rendah. 
+                        Kami mengimplementasikan <strong>YIN Autocorrelation</strong> yang dioptimasi dengan instruksi hardware ARM NEON. 
+                        Hasilnya? Deteksi nada bass (Low-B) secepat nada tinggi.
+                    </p>
                 </div>
-                <p>Menggabungkan akurasi algoritma YIN dengan stabilitas Kalman Filter. Hasilnya? Jarum yang tidak "gemetar" dan deteksi pitch yang instan, bahkan untuk senar Low-B bass.</p>
+                <div class="grid-decoration"></div>
             </div>
 
-            <div class="feature-card glass-panel reveal" style="transition-delay: 100ms;">
-                <div class="tech-tag">VISUAL</div>
-                <h3>Organic Physics UI</h3>
-                <p>Bukan sekadar animasi gambar. Jarum tuner dan metronom dirender menggunakan kalkulasi fisika real-time 60fps, memberikan feedback visual yang natural seperti alat analog.</p>
+            <div class="bento-item item-tall glass-panel reveal" style="transition-delay: 100ms;">
+                <div class="bento-content">
+                    <div class="icon-box purple"></div>
+                    <h3>Analog Physics</h3>
+                    <p>
+                        Jarum tuner tidak sekadar "pindah". Ia memiliki massa, inersia, dan momentum. 
+                        Dihitung secara realtime untuk memberikan sensasi taktil seperti tuner analog mahal.
+                    </p>
+                </div>
+                <div class="visual-circle"></div>
             </div>
 
-            <div class="feature-card glass-panel reveal" style="transition-delay: 200ms;">
-                <div class="tech-tag">ARCHITECTURE</div>
-                <h3>Memory Efficient</h3>
-                <p>Dibuat seringan mungkin. Tanpa bloatware, tanpa library iklan yang memakan RAM. Fokus CPU 100% didedikasikan untuk analisis audio.</p>
+            <div class="bento-item item-medium glass-panel reveal" style="transition-delay: 200ms;">
+                <div class="icon-box green"></div>
+                <h3>Eco-Engine</h3>
+                <p>CPU usage &lt; 2%. Didesain untuk sesi latihan panjang tanpa menguras baterai.</p>
+            </div>
+
+            <div class="bento-item item-medium glass-panel reveal" style="transition-delay: 300ms;">
+                <div class="icon-box pink"></div>
+                <h3>Anti-Jitter</h3>
+                <p>Dilengkapi <em>Kalman Filter</em> untuk menstabilkan jarum dari noise lingkungan.</p>
             </div>
         </div>
     </section>
 
-    <section id="privacy" class="container section-padding">
+    <section id="manifesto" class="container section-padding">
         <div class="privacy-wrapper glass-panel reveal">
             <div class="privacy-header">
                 <div class="lock-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                 </div>
                 <h2>The Privacy Manifesto</h2>
+                <p class="privacy-sub">Kami menganut prinsip <strong>"Hostile Privacy"</strong>.</p>
             </div>
             
             <div class="privacy-content">
-                <p class="lead-text">Aplikasi tuner tidak seharusnya memata-matai penggunanya. Di Query Cat, kami menganut prinsip <strong>"Hostile Privacy"</strong>.</p>
+                <p class="lead-text">
+                    Aplikasi utilitas tidak seharusnya memata-matai penggunanya. 
+                    Berikut adalah janji teknis kami:
+                </p>
                 
                 <div class="policy-grid">
                     <div class="policy-point">
                         <h4>Ephemeral Processing</h4>
-                        <p>Audio dari mikrofon hanya hidup di RAM selama <span class="code">23 milidetik</span> untuk dihitung frekuensinya, lalu langsung dihapus/overwrite. Tidak pernah disimpan ke storage.</p>
+                        <p>Audio dari mikrofon hanya hidup di RAM selama <span class="code">~23ms</span> untuk kalkulasi, lalu langsung di-overwrite. Tidak pernah disimpan ke storage.</p>
                     </div>
                     <div class="policy-point">
                         <h4>Air-Gapped Logic</h4>
@@ -141,8 +187,47 @@
                 </div>
 
                 <div class="data-safety-badge">
-                    <span>✅ Verified for Google Play Data Safety</span>
+                    <span> Verified for Google Play Data Safety</span>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="container section-padding">
+        <div class="faq-wrapper reveal">
+            <div class="faq-header">
+                <h2>Frequent <span class="gradient-text">Queries</span></h2>
+                <p>Jawaban teknis untuk musisi kritis.</p>
+            </div>
+            
+            <div class="faq-list">
+                <details class="faq-item glass-panel">
+                    <summary>Mengapa "Native C++" lebih baik dari tuner biasa?</summary>
+                    <div class="faq-body">
+                        <p>Tuner berbasis Java/Kotlin bergantung pada "Garbage Collector" yang menyebabkan jeda acak (stutter). C++ memberikan kontrol memori manual, menjamin aliran audio yang mulus dan latensi ultra-rendah.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item glass-panel">
+                    <summary>Apakah support Drop Tunings?</summary>
+                    <div class="faq-body">
+                        <p>Tentu. PurrTune mendukung Standard, Drop D, Half-Step Down (Eb), Open G, DADGAD, dan Full Chromatic Mode untuk tuning custom apapun.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item glass-panel">
+                    <summary>Apakah perlu koneksi internet?</summary>
+                    <div class="faq-body">
+                        <p>Sama sekali tidak. Seluruh pemrosesan Digital Signal Processing (DSP) dilakukan lokal di chipset HP Anda (On-Device). Mode pesawat aman.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item glass-panel">
+                    <summary>HP saya spek kentang, kuat gak?</summary>
+                    <div class="faq-body">
+                        <p>PurrTune dioptimasi untuk berjalan mulus bahkan di perangkat <em>entry-level</em> (Android 8.0 ke atas) dengan konsumsi RAM di bawah 50MB.</p>
+                    </div>
+                </details>
             </div>
         </div>
     </section>
@@ -151,11 +236,12 @@
         <div class="container footer-content">
             <div class="footer-left">
                 <span class="brand-text">Query Cat</span>
-                <p>&copy; 2026. Code crafted with obsession.</p>
+                <p class="copyright">&copy; 2026. Code crafted with obsession.</p>
             </div>
             <div class="footer-right">
-                <a href="#">Contact Support</a>
-                <a href="#">Github Repo</a>
+                <a href="#">Support</a>
+                <span class="dot-sep">�</span>
+                <a href="#">Github</a>
             </div>
         </div>
     </footer>
